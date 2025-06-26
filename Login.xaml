@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="plante2._3.Login"
+             >
+
+    <Grid BackgroundColor="#F2F3F5">
+
+
+        <VerticalStackLayout Padding="30" Spacing="30" HeightRequest="700">
+
+            <Image Source="newaccount.png" WidthRequest="200" HeightRequest="200" />
+            <Label Text="Welcome Back!" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" TextColor="LightSeaGreen"/>
+
+
+            <HorizontalStackLayout VerticalOptions="Center" >
+
+                <Image Source="account.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+
+                <Entry x:Name="UserName" Placeholder="User Name" TextColor="Black" VerticalOptions="Fill" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout VerticalOptions="Center" >
+                <Image Source="lock.png"   HeightRequest="45"  WidthRequest="35"/>
+
+                <Entry x:Name="Password" Placeholder="Password" IsPassword="True" TextColor="Black" VerticalOptions="Fill"  />
+            </HorizontalStackLayout>
+
+            <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 50" StrokeThickness="1" WidthRequest="100">
+
+                <Button Text="Sign In" Clicked="AccountClicked" BackgroundColor="AliceBlue"
+                            TextColor="LightSeaGreen"/>
+            </Border >
+
+            <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 10" StrokeThickness="1" WidthRequest="200">
+
+                <Button Text="Continue as Guest" Clicked="GuestClicked"  BackgroundColor="AliceBlue"
+                            TextColor="LightSeaGreen"/>
+            </Border>
+            <StackLayout  >
+                <Label Text="New User?" TextColor="DarkGrey" FontSize="Small" HorizontalOptions="Center" />
+                <Button Text="Create Account" TextColor="LightSeaGreen" FontSize="Small" HorizontalOptions="Center" 
+                       FontAttributes="Italic,Bold"  Clicked="OnCreateAccount"  BackgroundColor="Transparent"/>
+            </StackLayout>
+   
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

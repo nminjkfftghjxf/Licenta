@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="plante2._3.MainPage"
+             >
+    <Grid BackgroundColor="{AppThemeBinding Light=Transparent, Dark=#B2D3C2}" >
+
+
+       
+        <Image Source="mainwall.png"
+               WidthRequest="456"
+               HeightRequest="600"
+               Opacity="0.4"
+               IsEnabled="False" 
+               Grid.Row="0"/>
+
+
+                <Label Text="My Garden" FontSize="Title" TextColor="DarkGreen" FontAttributes="Bold" Margin="20,20,0,0" 
+               BackgroundColor="{AppThemeBinding Light=Transparent, Dark=Transparent}" />
+
+        <ScrollView Orientation="Horizontal" Padding="15"  HorizontalScrollBarVisibility="Never">
+            
+       
+        <HorizontalStackLayout Margin="10,60,0,0" VerticalOptions="Start" Spacing="20">
+                <Border StrokeShape="RoundRectangle 30" Stroke="DarkGreen" StrokeThickness="1">
+                    <Button Text="All" BackgroundColor="#E6F2E6" TextColor="DarkGreen"
+                            Clicked="All"/>
+            </Border>
+
+                <Border StrokeShape="RoundRectangle 30" Stroke="DarkGreen" StrokeThickness="1">
+                    <Button Text="Recents" BackgroundColor="#E6F2E6"  TextColor="DarkGreen"
+                            Clicked="Recents"/>
+            </Border>
+
+                <Border StrokeShape="RoundRectangle 30" Stroke="DarkGreen" StrokeThickness="1" >
+                    <Button Text="Name-Ascending" BackgroundColor="#E6F2E6"  TextColor="DarkGreen"
+                            Clicked="Name_A"/>
+            </Border>
+
+                <Border StrokeShape="RoundRectangle 30" Stroke="DarkGreen" StrokeThickness="1">
+                    <Button Text="Family" BackgroundColor="#E6F2E6"  TextColor="DarkGreen"
+                            Clicked="Family"/>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 30" Stroke="DarkGreen" StrokeThickness="1">
+                    <Button Text="Edible" BackgroundColor="#E6F2E6"  TextColor="DarkGreen"
+                            Clicked="Edible"/>
+                </Border>
+
+
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <Grid Margin="0,125,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+       
+        <CollectionView x:Name="PlantListView" Grid.Row="0" 
+                        ItemsSource="{Binding PlanteFiltrate}" >
+            
+            <CollectionView.ItemTemplate Spacing="20">
+                <DataTemplate>
+                    <Border  Margin="20" BackgroundColor="White" StrokeShape="RoundRectangle 30" >
+                            <StackLayout Orientation="Vertical" Padding="10" Spacing="20" 
+                                         BackgroundColor="{AppThemeBinding Light=White, Dark=#B0E0E6}">
+                            
+                            <HorizontalStackLayout>
+
+
+                                <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" Aspect="AspectFill"
+                                   Margin="-0,0,0,0" HorizontalOptions="Start"
+                                   >
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                                    </Image.Clip>
+                                </Image>
+
+                                    <VerticalStackLayout Spacing="50" Padding="10">
+                                        
+                                    
+                                <Label Text="{Binding Name}"  FontAttributes="Bold" 
+                                       VerticalOptions="Center"  HorizontalOptions="FillAndExpand"
+                                       TextColor="{AppThemeBinding Light=Black, Dark=Black}"
+                                       HorizontalTextAlignment="Start"  WidthRequest="150"/>
+
+                                <Label Text="{Binding Family}" FontAttributes="Italic" 
+                                  VerticalOptions="End" HorizontalOptions="CenterAndExpand" 
+                                       TextColor="{AppThemeBinding Light=Black, Dark=Black}"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+
+
+                            <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="20">
+
+                                <HorizontalStackLayout >
+                                    <Image Source="name.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+                                    <!--<Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />-->
+                                </HorizontalStackLayout>
+
+
+                                <HorizontalStackLayout>
+
+                                    <Image Source="family.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+                                    <!--<Label Text="{Binding Family}" FontSize="14" />-->
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
+                                    <Image Source="cycle.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+                                    <!--<Label Text="{Binding Cycle}" FontSize="14" />-->
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
+
+                                    <Image Source="water.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+                                    <!--<Label Text="{Binding Watering}" FontSize="14" />-->
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
+
+                                    <Image Source="sun.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+                                    <!--<Label Text="{Binding Sunlight}" FontSize="14" />-->
+
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
+                                    <Image Source="dots.png" WidthRequest="35" HeightRequest="25" Aspect="AspectFill" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnDotsTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+
+
+                        </StackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="End"
+                     Orientation="Horizontal" Spacing="60"  >
+
+
+            <VerticalStackLayout >
+                <ImageButton
+          x:Name="Settings"
+          Clicked="GoToSettings"
+          Source="sett.png"
+          WidthRequest="10"
+          HeightRequest="10"
+          SemanticProperties.Hint="Go to Settings"
+
+          />
+                <Label Text="Settings" FontSize="Micro" TextColor="DarkGreen" Margin="4,0,0,0" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                
+            
+            <ImageButton
+            x:Name="Home"
+            Clicked="MainRedirect"
+            Source="generic_home.png"
+            WidthRequest="10"
+            HeightRequest="10"
+            SemanticProperties.Hint="Go to MainPage"/>
+                <Label Text="Home" FontSize="Micro" TextColor="DarkGreen" Margin="9,0,0,0"/>
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout>
+                
+            
+            <ImageButton
+                x:Name="ScanNewPlant"
+                Clicked="CaptureClicked"
+                Source="cameragrade.png"
+                WidthRequest="10"
+                HeightRequest="10"
+                SemanticProperties.Hint="Scan a new plant" />
+                <Label Text="Camera" FontSize="Micro" TextColor="DarkGreen" Margin="5,0,0,0"/>
+            </VerticalStackLayout>
+
+        </StackLayout>
+        </Grid>
+
+    </Grid>
+</ContentPage>
