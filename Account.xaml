@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="plante2._3.Account"
+             >
+    <Grid BackgroundColor="#F2F3F5">
+
+        <VerticalStackLayout   VerticalOptions="Fill" HorizontalOptions="Fill" Padding="30">
+
+            <Image Source="waterplant.png"  WidthRequest="200" HeightRequest="200" Margin="25,0,0,0 " />
+
+    <VerticalStackLayout Padding="50" Spacing="20" HeightRequest="600" >
+        <Label Text="Join us!" FontSize="24" HorizontalOptions="Center"  TextColor="DarkGreen"/>
+
+		<HorizontalStackLayout >
+
+			<Image Source="account.png" WidthRequest="25" HeightRequest="25" Aspect="AspectFill" />
+        <Entry x:Name="UsernameEntry" Placeholder="Enter new username"  VerticalOptions="Fill"/>
+		</HorizontalStackLayout>
+
+		<HorizontalStackLayout >
+
+		<Image Source="lock.png"   HeightRequest="45"  WidthRequest="35"/>
+        <Entry x:Name="PasswordEntry" Placeholder="Enter new password" IsPassword="True" VerticalOptions="Fill"/>
+		</HorizontalStackLayout>
+
+
+	</VerticalStackLayout>
+
+</VerticalStackLayout   >
+		<VerticalStackLayout Spacing="30"  HorizontalOptions="Center" Padding="100" Margin="0,300,0,0" HeightRequest="200">
+
+            <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 20" StrokeThickness="1">
+                
+            
+			<Button Text="Create Account" Clicked="OnRegisterClicked"  VerticalOptions="End" 
+                    BackgroundColor="AliceBlue" TextColor="LightSeaGreen"/>
+            </Border>
+
+
+            <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 10" StrokeThickness="1">
+
+
+                <Button Text="Cancel" Clicked="OnCancelClicked" BackgroundColor="AliceBlue"
+                            TextColor="LightSeaGreen"/>
+            </Border>
+            
+		</VerticalStackLayout>
+		
+</Grid>
+</ContentPage>
