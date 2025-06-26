@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="plante2._3.Test"
+    x:Name="please" WidthRequest="250" HeightRequest="550" Padding="5"
+    BackgroundColor="{AppThemeBinding Light=AliceBlue, Dark=#D8BFD8}" >
+
+    <Grid                             
+              WidthRequest="{Binding Source={x:Reference please}, Path=Width}"
+              HeightRequest="{Binding Source={x:Reference please}, Path=Height}">
+
+        <ScrollView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  VerticalScrollBarVisibility="Never">
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Spacing="50"
+>
+                <Image x:Name="Image" Aspect="AspectFill" HeightRequest="200" WidthRequest="250"/>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                    <Image Source="name.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                    <Label x:Name="AnotherCommon"  HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" LineBreakMode="WordWrap"
+						   TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                    </HorizontalStackLayout  >
+                    <Label Text="Common Name" FontSize="8" HorizontalTextAlignment="Start" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout >
+                    <HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}"  Spacing="20" >
+                    <Image Source="family.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                        <Label x:Name="AnotherFamily"  HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" 
+							   LineBreakMode="WordWrap" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                </HorizontalStackLayout>
+                    <Label Text="Scientific Name" FontSize="8" HorizontalTextAlignment="Start" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                </VerticalStackLayout>
+
+
+				<VerticalStackLayout >
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}"  Spacing="20" >
+						<Image Source="world.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherO"  HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" 
+							   LineBreakMode="WordWrap"  TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Origin" FontSize="8" HorizontalTextAlignment="Justify" Margin="20,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+				</VerticalStackLayout>
+
+				<VerticalStackLayout >
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}"  Spacing="20" >
+						<Image Source="type.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherT"  HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" LineBreakMode="WordWrap" 
+							   TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Type" FontSize="8" HorizontalTextAlignment="Justify" Margin="20,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+				</VerticalStackLayout>
+				
+                <VerticalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Fill" WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+                        <Image Source="cycle.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                        <Label x:Name="AnotherCycle"  VerticalTextAlignment="Justify" HorizontalTextAlignment="Justify" LineBreakMode="WordWrap" 
+							   TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                    </HorizontalStackLayout>
+                    <Label Text="Cycle" FontSize="8" HorizontalTextAlignment="Justify" Margin="20,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+                </VerticalStackLayout>
+
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout HorizontalOptions="Fill" WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="bloom.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherFS"  VerticalTextAlignment="Justify" HorizontalTextAlignment="Justify" LineBreakMode="WordWrap" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Blooming Season" FontSize="8" HorizontalTextAlignment="Justify" Margin="4,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+				</VerticalStackLayout>
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout HorizontalOptions="Fill" WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="pruning.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherP"  VerticalTextAlignment="Justify" HorizontalTextAlignment="Justify" LineBreakMode="WordWrap" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Pruning" FontSize="8" HorizontalTextAlignment="Justify" Margin="15,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+				</VerticalStackLayout>
+				
+				
+                <VerticalStackLayout>
+                    <HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+                    <Image Source="water.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                        <Label x:Name="AnotherWater" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+                    </HorizontalStackLayout>
+                    <Label Text="Water" FontSize="8" HorizontalTextAlignment="Start" Margin="15,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+                </VerticalStackLayout>
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="watertime.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherWP" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Watering Period" FontSize="8" HorizontalTextAlignment="Start" Margin="0,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+				</VerticalStackLayout>
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="watermark.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherWM" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Watering Amount" FontSize="8" HorizontalTextAlignment="Start" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+				</VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+                    <Image Source="sun.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                    <Label x:Name="AnotherSun" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify"  TextColor="{AppThemeBinding Light=Black, Dark=#Black}"/>
+                </HorizontalStackLayout>
+                    <Label Text="SunLight" FontSize="8" HorizontalTextAlignment="Start" Margin="15,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+                </VerticalStackLayout>
+
+
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="attracts.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherA" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Attracts" FontSize="8" HorizontalTextAlignment="Start" Margin="15,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+				</VerticalStackLayout>
+
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="ph.jpeg" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherPh" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout >
+					<Label Text="Poisonous-Humans" FontSize="8" HorizontalTextAlignment="Start" TextColor="{AppThemeBinding Light=Black, Dark=#Black}" />
+				</VerticalStackLayout>
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="pp.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherPp" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify" TextColor="{AppThemeBinding Light=Black, Dark=Black}" />
+					</HorizontalStackLayout>
+					<Label Text="Poisonous-Pets" FontSize="8" HorizontalTextAlignment="Start" Margin="0,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}"/>
+				</VerticalStackLayout>
+
+
+				<VerticalStackLayout>
+					<HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="20">
+						<Image Source="edible.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+						<Label x:Name="AnotherE" HorizontalTextAlignment="Justify" VerticalTextAlignment="Justify"  TextColor="{AppThemeBinding Light=Black, Dark=Black}"/>
+					</HorizontalStackLayout>
+					<Label Text="Edible Parts" FontSize="8" HorizontalTextAlignment="Start" Margin="5,0,0,0" TextColor="{AppThemeBinding Light=Black, Dark=Black}"/>
+				</VerticalStackLayout>				
+				
+                <HorizontalStackLayout WidthRequest="{Binding Source={x:Reference please}, Path=Width}" Spacing="30" >
+                    <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 50" StrokeThickness="1">
+                        <Button Text="Remove Plant" Clicked="RemovePlant"  FontSize="16" HorizontalOptions="Center" BackgroundColor="AliceBlue" 
+                                TextColor="LightSeaGreen"/>
+                    </Border>
+
+                    <Border Stroke="LightSeaGreen" StrokeShape="RoundRectangle 50" StrokeThickness="1">
+
+                    <Button Text="Return" Clicked="OnCloseClicked" FontSize="16" HorizontalOptions="Center" BackgroundColor="AliceBlue"
+                            TextColor="LightSeaGreen"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout >
+        </ScrollView>
+    </Grid>
+
+</toolkit:Popup>

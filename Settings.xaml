@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="plante2._3.Settings"
+             Title="Settings" >
+    <Grid BackgroundColor="{AppThemeBinding Light=AliceBlue, Dark=#609078}" >
+
+        <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <VerticalStackLayout>
+                <Label 
+                Text="Account" 
+                FontSize="15" 
+                FontAttributes="Bold" 
+                Margin="0,0,0,10"
+                TextColor="{AppThemeBinding Light={StaticResource LightMode}, Dark=DarkGreen}"/>
+
+                <Border Stroke="#ddd" 
+                        StrokeThickness="1" 
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#ACE1AF}"
+                        Padding="10" 
+                        StrokeShape="RoundRectangle 10">
+
+                    <VerticalStackLayout Spacing="15">
+                        <Grid ColumnDefinitions="*,Auto" Padding="5">
+                                <Label x:Name="Status" FontSize="16" TextColor="{AppThemeBinding Light=Black, Dark=DarkGreen}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="StatusChange"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Image Source="chevron_right.png" WidthRequest="20" HeightRequest="20" />
+                        </Grid>
+
+
+                        <!--<Grid ColumnDefinitions="*,Auto" Padding="5">
+                            <Label Text="Language" FontSize="16"  />
+                            <Image Source="chevron_right.png" WidthRequest="20" HeightRequest="20" />
+                        </Grid>-->
+
+
+                        <Grid ColumnDefinitions="*,Auto" Padding="5">
+                                <Label Text="Delete Account" FontSize="16" TextColor="{AppThemeBinding Light=Black, Dark=DarkGreen}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnDeleteAccount"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Image Source="chevron_right.png" WidthRequest="20" HeightRequest="20" />
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label 
+                    Text="Aspect" 
+                    FontSize="15" 
+                    FontAttributes="Bold" 
+                    Margin="0,0,0,10"
+                    TextColor="{AppThemeBinding Light={StaticResource LightMode}, Dark=DarkGreen}"/>
+
+                <Border Stroke="#ddd" 
+                        StrokeThickness="1" 
+                         BackgroundColor="{AppThemeBinding Light=White, Dark=#ACE1AF}"
+                        Padding="10" 
+                        StrokeShape="RoundRectangle 10">
+
+                    <VerticalStackLayout Spacing="15">
+                        <Grid ColumnDefinitions="*,Auto" Padding="5">
+                                <Label Text="Dark Mode" FontSize="16" TextColor="{AppThemeBinding Light=Black, Dark=DarkGreen}" />
+                            <Switch x:Name="DarkModeSwitch" 
+                             Toggled="DarkMode"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+
+            <!--<VerticalStackLayout>
+                
+                <Label 
+                    Text="Licence" 
+                    FontSize="15" 
+                    FontAttributes="Bold" 
+                    Margin="0,0,0,10"
+                    TextColor="{AppThemeBinding Light={StaticResource LightMode}, Dark={StaticResource DarkMode}}"/>
+
+                <Border Stroke="#ddd" 
+                    StrokeThickness="1" 
+                    BackgroundColor="White" 
+                    Padding="10" 
+                    StrokeShape="RoundRectangle 10">
+
+                    <VerticalStackLayout Spacing="15">
+                        <Grid ColumnDefinitions="*,Auto" Padding="5">
+                            <Label Text="" FontSize="16" />
+                            <Image Source="chevron_right.png" WidthRequest="20" HeightRequest="20" />
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>-->
+
+
+        </VerticalStackLayout>
+
+
+    </ScrollView >
+
+        <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="End"
+                     Orientation="Horizontal" Spacing="60">
+
+            <VerticalStackLayout>
+                
+            
+            <ImageButton 
+                x:Name="Sett"
+                Source="sett.png"
+                Clicked="SettingsRedirect"
+                WidthRequest="10"
+                HeightRequest="10"
+                SemanticProperties.Hint="Go to Settings"/>
+                <Label Text="Settings" TextColor="DarkGreen" FontSize="Micro" Margin="4,0,0,0"/>
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout>
+                
+            
+            <ImageButton
+        x:Name="Home"
+        Clicked="SettingsToMainPage"
+        Source="generic_home.png"
+        WidthRequest="10"
+        HeightRequest="10"
+        SemanticProperties.Hint="Go to MainPage"/>
+                <Label Text="Home" TextColor="DarkGreen" FontSize="Micro" Margin="8,0,0,0"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                
+            
+            <ImageButton
+                x:Name="ScanNewPlant"
+                Clicked="SettingsCaptureClicked"
+                Source="cameragrade.png"
+                WidthRequest="10"
+                HeightRequest="10"
+
+                SemanticProperties.Hint="Scan a new plant" />
+                <Label Text="Camera" TextColor="DarkGreen" FontSize="Micro" Margin="4,0,0,0"/>
+            </VerticalStackLayout>
+
+        </StackLayout>
+
+
+    </Grid>
+
+</ContentPage>
